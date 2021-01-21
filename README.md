@@ -1,9 +1,8 @@
-# Federated Learning with SignSGD
+# Federated Learning via Sparse Ternary Compression 
 
-Simulation of federated learning with signSGD.
+Simulation of federated learning via STC. 
 
 Reference
 ```
-Bernstein, Jeremy, Jiawei Zhao, Kamyar Azizzadenesheli, and Anima Anandkumar. "signSGD with majority vote is communication efficient and fault tolerant." arXiv preprint arXiv:1810.05291 (2018).
-Jin, Richeng, Yufan Huang, Xiaofan He, Huaiyu Dai, and Tianfu Wu. "Stochastic-Sign SGD for Federated Learning with Theoretical Guarantees." arXiv preprint arXiv:2002.10940 (2020).
+Sattler, Felix, Simon Wiedemann, Klaus-Robert Müller, and Wojciech Samek. "Robust and communication-efficient federated learning from non-iid data." IEEE transactions on neural networks and learning systems (2019).
 ```

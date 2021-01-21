@@ -36,5 +36,6 @@ compressor_registry = {
 }
 
 entropy_coder_registry = {
-    "entropy": IdealCoder
+    "golomb":   GolombCoder,
+    "entropy":  IdealCoder
 }

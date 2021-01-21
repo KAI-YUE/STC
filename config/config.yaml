@@ -55,7 +55,8 @@ weight_decay: 0
 
 # quantization_level: 0
 compressor: "stc"
-entropy_coder: "entropy"
+entropy_coder: "golomb"
+# entropy_coder: "entropy"
 
 # Simulation dataset configurations
 # test_data_dir : the directory to the testDataset
