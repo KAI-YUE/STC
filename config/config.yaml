@@ -1,0 +1,89 @@
+# device: "cuda" | "cpu"
+device: cuda
+imbalance: true
+
+# sparsity parameter
+sparsity: 0.01
+
+# distributed networks
+# users:            number of users
+# random_sampling:   whether or not perform random sampling before each iteration
+# sampling_fraction: the fraction of users to sample
+# alpha:             the alpha parameter of the Dirichlet distribution 
+rounds: 100
+users: 31
+iid: true
+# iid: false
+# alpha: 0.01
+user_with_data: ""
+user_with_data: "/media/kaiyue/2D8A97B87FB4A806/Datasets/user_with_data/fmnist/iid/iid_mapping_0.dat"
+# user_with_data: "/media/kaiyue/2D8A97B87FB4A806/Datasets/user_with_data/fmnist/a0.5/user_dataidx_map_0.50_0.dat"
+# user_with_data: "/media/kaiyue/2D8A97B87FB4A806/Datasets/user_with_data/cifar/iid/iid_mapping_0.dat"
+# user_with_data: "/media/kaiyue/2D8A97B87FB4A806/Datasets/user_with_data/cifar/a0.5/user_dataidx_map_0.50_0.dat"
+
+# hyperparameters and model type
+# model:            "naiveMLP", "naiveCNN"
+# local_batch_size: size of the local batch
+# tau:              number of local iterations
+# gamma:            gamma parameter described in the paper 
+# rounds:           total communication rounds upper bound
+# momentum:         momentum settings for SGD  
+# model: "naiveCNN"
+model: "lenet"
+# model: "vgg"
+# model: "bn"
+full_weight_dir: ""
+# full_weight_dir: "/media/kaiyue/2D8A97B87FB4A806/Datasets/heuristic/full_init.pth"
+# full_weight_dir: "./checkpoint/full_init.pth"
+local_batch_size: 500
+# lr: 0.1
+# lr: 0.1
+lr: 0.01 # fmnist
+# lr: 0.00085 # fmnist noniid
+# lr: 0.001 # cifar
+# lr: 0.00002
+# lr: 0.002
+lr_scaler: 0.5
+scheduler: 
+# - 10
+# - 20
+# - 30
+# - 40
+- 1000
+momentum: 0
+weight_decay: 0
+
+# quantization_level: 0
+compressor: "stc"
+entropy_coder: "entropy"
+
+# Simulation dataset configurations
+# test_data_dir : the directory to the testDataset
+# train_data_dir: the directory to the trainDataset
+# sample_size:   the size of one sample [height x width/num_of_features]
+# classes:      the number of classes
+record_dir:     ../This{}.dat
+# test_data_dir:  /media/kaiyue/2D8A97B87FB4A806/Datasets/mnist/test.dat
+# train_data_dir: /media/kaiyue/2D8A97B87FB4A806/Datasets/mnist/train.dat
+test_data_dir:  /media/kaiyue/2D8A97B87FB4A806/Datasets/fmnist/test.dat
+train_data_dir: /media/kaiyue/2D8A97B87FB4A806/Datasets/fmnist/train.dat
+sample_size:
+- 28
+- 28
+channels: 1
+classes: 10
+
+# record_dir:     ../This{}.dat
+# test_data_dir:  /media/kaiyue/2D8A97B87FB4A806/Datasets/cifar/test.dat
+# train_data_dir: /media/kaiyue/2D8A97B87FB4A806/Datasets/cifar/train.dat
+# sample_size:
+# - 32
+# - 32
+# channels: 3
+# classes: 10
+
+
+# Log configurations
+log_iters:   1
+log_level:   "INFO"
+log_file:    "./train.log"
